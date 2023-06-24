@@ -16,6 +16,7 @@
 		312CD2582A46B3C00088BD01 /* MapTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312CD2572A46B3C00088BD01 /* MapTypeView.swift */; };
 		312CD25A2A46CF2F0088BD01 /* MapLocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312CD2592A46CF2F0088BD01 /* MapLocationSearchView.swift */; };
 		312CD25D2A46CF730088BD01 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312CD25C2A46CF730088BD01 /* enums.swift */; };
+		31F4D0452A47229C00851F88 /* MapLookAroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4D0442A47229C00851F88 /* MapLookAroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		312CD2572A46B3C00088BD01 /* MapTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTypeView.swift; sourceTree = "<group>"; };
 		312CD2592A46CF2F0088BD01 /* MapLocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationSearchView.swift; sourceTree = "<group>"; };
 		312CD25C2A46CF730088BD01 /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
+		31F4D0442A47229C00851F88 /* MapLookAroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLookAroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				312CD2522A46AA1B0088BD01 /* SimpeMapView.swift */,
 				312CD2572A46B3C00088BD01 /* MapTypeView.swift */,
 				312CD2592A46CF2F0088BD01 /* MapLocationSearchView.swift */,
+				31F4D0442A47229C00851F88 /* MapLookAroundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				312CD25D2A46CF730088BD01 /* enums.swift in Sources */,
+				31F4D0452A47229C00851F88 /* MapLookAroundView.swift in Sources */,
 				312CD2462A46A9F10088BD01 /* ContentView.swift in Sources */,
 				312CD2442A46A9F10088BD01 /* SwiftUI_iOS17_Map_ExampleApp.swift in Sources */,
 				312CD2582A46B3C00088BD01 /* MapTypeView.swift in Sources */,
