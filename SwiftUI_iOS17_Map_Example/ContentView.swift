@@ -20,6 +20,8 @@ struct ContentView: View {
                     NavigationLink("Map Location Search", destination: MapLocationSearchView())
                     
                     NavigationLink("Map Look Around", destination: MapLookAroundView())
+                    
+                    NavigationLink("Map Route", destination: MapRouteView())
                 }
             }
         }
