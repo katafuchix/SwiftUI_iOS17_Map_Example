@@ -29,9 +29,10 @@ struct MapLookAroundView: View {
     @Namespace private var locationSpace
     
     @State private var lookAroundScene: MKLookAroundScene? = nil
+    @State private var isLocationSelected: Bool = false
     
     var body: some View {
-        //Map(position: $cameraProsition, interactionModes: .all)
+        // タップ位置を利用する場合はselectionが必要 scopeはなくてもよい
         Map(position: $cameraProsition, interactionModes: .all, selection: $mapSelection){ //}, scope: locationSpace) {
         }
         //.mapControlVisibility(.hidden)
@@ -42,27 +43,32 @@ struct MapLookAroundView: View {
             MapPitchButton()
         }
         .mapStyle(.standard(elevation: .automatic, emphasis: .automatic))
-        .mapFeatureSelectionContent(content: { item in
-            //Marker(item: $0.coordinate)
-            
-            //Marker(item.title ?? "", coordinate: item.coordinate)
+        .mapFeatureSelectionContent(content: { item in // タップ時の処理
 
-            Annotation(item.title ?? "", coordinate: item.coordinate)
+            //Marker(item.title ?? "", coordinate: item.coordinate) // マーカーの場合 Viewではないので注意
+
+            Annotation(item.title ?? "", coordinate: item.coordinate) // Annotationの場合 自由度が高い
             {
                 VStack {
                     Image(systemName: "mappin.circle.fill")
                         .foregroundColor(.red)
+                        .background(.white)
+                        .clipShape(Circle())
                         .onTapGesture {
                             print(item.title ?? "")
                             print(item.coordinate)
-                            getLookAroundScene(coordinate: item.coordinate)
+                            //getLookAroundScene(coordinate: item.coordinate)
+                            isLocationSelected = true
                         }
                 }
-                /*.onAppear(){
+                .onAppear(){
+                    clearLookAround()
+                    // Annotation 出現と同時に行う場合
                     getLookAroundScene(coordinate: item.coordinate)
-                }*/
+                }
            }.annotationTitles(.hidden)
         })
+        /*
         .overlay(alignment: .bottom) {
             VStack {
                 // MKLookAroundViewがあれば表示する
@@ -71,48 +77,45 @@ struct MapLookAroundView: View {
                         LookAroundPreview(initialScene: lookAroundScene)
                             .frame(width: 160).frame(height: 120)
                         Spacer()
-                        
                     }.padding([.leading, .bottom], 20)
                 }
             }
         }
-    }
-    
-    // マーカー用のView
-    private var pickupView: some View {
-            Circle()
-            .size(CGSize(width: 24, height: 24))
-            .foregroundColor(.red)
-            .offset(x: -7, y: -20)
-            .overlay(alignment: .bottom) {
-                Image(systemName: "triangle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundStyle(.red)
-                    .frame(width: 16)
-                    .scaleEffect(y: -1)
-            }
+        */
+        .sheet(isPresented: $isLocationSelected){
+            LookAroundPreview(initialScene: lookAroundScene)
+            .ignoresSafeArea()
+            .presentationDetents([
+                .height(320),
+                .fraction(0.6)])
+        }
     }
     
     func getLookAroundScene(coordinate: CLLocationCoordinate2D) {
-        lookAroundScene = nil
+        clearLookAround()
         Task.detached {
             // なぜか取得できない
             //let request = MKLookAroundSceneRequest(mapItem: selectedItem)
             
+            // 緯度経度からLookAroundを取得
             let request = MKLookAroundSceneRequest(coordinate: coordinate)
             do {
                 let scene = try await request.scene
                 DispatchQueue.main.async {
-                    print("scene")
-                    print(scene)
+                    //print(scene)
                     lookAroundScene = scene
+                    //isLocationSelected = true
                 }
             } catch {
                 // Handle any errors that occur during the async operation
                 print("Error: \(error)")
             }
         }
+    }
+    
+    func clearLookAround() {
+        isLocationSelected = false
+        lookAroundScene = nil
     }
   
 }
