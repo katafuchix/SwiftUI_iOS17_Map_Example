@@ -58,7 +58,6 @@ struct MapTypeView: View {
                     Text("Hybrid").tag(0)
                     Text("Image").tag(1)
                 }.pickerStyle(SegmentedPickerStyle())
-                    //.onChange(of: mapSetting.objectWillChange)  {
                     .onChange(of: mapSetting.mapType) { _, newState in
                         mapSetting.mapType = newState
                         updateMapStyle()
