@@ -20,7 +20,7 @@ struct MapTypeView: View {
     
     @State private var mapStyle = MapStyle.standard(elevation: .automatic)
     
-    @ObservedObject var mapSetting = MapSetting()    
+    @ObservedObject var mapSetting = MapSetting()
     
     func updateMapStyle() {
         switch self.mapSetting.mapType {
@@ -58,8 +58,9 @@ struct MapTypeView: View {
                     Text("Hybrid").tag(0)
                     Text("Image").tag(1)
                 }.pickerStyle(SegmentedPickerStyle())
-                    .onChange(of: mapSetting.mapType) {
-                        mapSetting.mapType = $0
+                    //.onChange(of: mapSetting.objectWillChange)  {
+                    .onChange(of: mapSetting.mapType) { _, newState in
+                        mapSetting.mapType = newState
                         updateMapStyle()
                     }
                     .padding([.top, .leading, .trailing], 16)
@@ -70,8 +71,8 @@ struct MapTypeView: View {
                     Text("Flat").tag(1)
                     Text("Realistic").tag(2)
                 }.pickerStyle(SegmentedPickerStyle())
-                    .onChange(of: mapSetting.elevation) {
-                        mapSetting.elevation = $0
+                    .onChange(of: mapSetting.elevation) { _, newState in
+                        mapSetting.elevation = newState
                         updateMapStyle()
                 }.padding([.leading, .trailing], 16)
                 
@@ -80,9 +81,8 @@ struct MapTypeView: View {
                     Text("Default").tag(0)
                     Text("Muted").tag(1)
                 }.pickerStyle(SegmentedPickerStyle())
-                    .onChange(of: mapSetting.emphasis) {
-                        print($0)
-                        mapSetting.emphasis = $0
+                    .onChange(of: mapSetting.emphasis) { _, newState in
+                        mapSetting.emphasis = newState
                         updateMapStyle()
                 }.padding([.leading, .trailing], 16)
             }.background(.gray)
