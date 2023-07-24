@@ -46,7 +46,6 @@ struct MapLookAroundView: View {
         .mapFeatureSelectionContent(content: { item in // タップ時の処理
 
             //Marker(item.title ?? "", coordinate: item.coordinate) // マーカーの場合 Viewではないので注意
-
             Annotation(item.title ?? "", coordinate: item.coordinate) // Annotationの場合 自由度が高い
             {
                 VStack {
@@ -57,8 +56,11 @@ struct MapLookAroundView: View {
                         .onTapGesture {
                             print(item.title ?? "")
                             print(item.coordinate)
+                            // タップでMKLookAroundViewを検索したい場合
                             //getLookAroundScene(coordinate: item.coordinate)
-                            isLocationSelected = true
+                            if lookAroundScene != nil {
+                                isLocationSelected = true
+                            }
                         }
                 }
                 .onAppear(){
@@ -68,7 +70,7 @@ struct MapLookAroundView: View {
                 }
            }.annotationTitles(.hidden)
         })
-        /*
+        // MKLookAroundView 左下矩形プレビュー
         .overlay(alignment: .bottom) {
             VStack {
                 // MKLookAroundViewがあれば表示する
@@ -81,13 +83,13 @@ struct MapLookAroundView: View {
                 }
             }
         }
-        */
+        // MKLookAroundViewがあればシートで表示
         .sheet(isPresented: $isLocationSelected){
             LookAroundPreview(initialScene: lookAroundScene)
-            .ignoresSafeArea()
-            .presentationDetents([
-                .height(320),
-                .fraction(0.6)])
+                .ignoresSafeArea()
+                .presentationDetents([
+                    .height(320),
+                    .fraction(0.6)])
         }
     }
     
