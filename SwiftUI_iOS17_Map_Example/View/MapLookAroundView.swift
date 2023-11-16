@@ -40,7 +40,8 @@ struct MapLookAroundView: View {
             MapUserLocationButton()
             MapCompass()
             MapScaleView()
-            MapPitchButton()
+            //MapPitchButton()
+            MapPitchToggle()
         }
         .mapStyle(.standard(elevation: .automatic, emphasis: .automatic))
         .mapFeatureSelectionContent(content: { item in // タップ時の処理

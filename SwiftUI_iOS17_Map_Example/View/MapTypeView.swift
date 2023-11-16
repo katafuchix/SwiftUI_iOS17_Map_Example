@@ -46,7 +46,8 @@ struct MapTypeView: View {
                 //MapUserLocationButton()
                 MapCompass()
                 MapScaleView()
-                MapPitchButton()
+                //MapPitchButton()
+                MapPitchToggle()
             }
             .mapStyle(mapStyle)
             

@@ -60,7 +60,8 @@ struct MapRouteView: View {
             MapUserLocationButton()
             MapCompass()
             MapScaleView()
-            MapPitchButton()
+            //MapPitchButton()
+            MapPitchToggle()
         }
         .mapStyle(.standard(elevation: .automatic, emphasis: .automatic))
         .mapScope(locationSpace)

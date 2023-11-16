@@ -20,7 +20,8 @@ struct SimpeMapView: View {
             MapUserLocationButton()
             MapCompass()
             MapScaleView()
-            MapPitchButton()
+            //MapPitchButton()
+            MapPitchToggle()
         }
         .mapStyle(.standard(elevation: .automatic))
     }
