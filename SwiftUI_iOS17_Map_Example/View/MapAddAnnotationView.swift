@@ -22,15 +22,12 @@ struct MapAddAnnotationView: View {
         Map(bounds: bounds,
             interactionModes: .all) {
             
-            Marker("JR吉祥寺駅", coordinate: CLLocationCoordinate2D(latitude: 35.7031528, longitude: 139.57985031)).tint(.blue)
+            Marker("JR吉祥寺駅", coordinate: CLLocationCoordinate2D(latitude: 35.7031528, longitude: 139.57985031))
             
             Marker("サンロード商店街入口", coordinate: CLLocationCoordinate2D(latitude: 35.703653, longitude: 139.57980)).tint(.blue)
             
             
-            Marker("ハモニカ横丁入口", coordinate: CLLocationCoordinate2D(latitude:35.70347, longitude: 139.57910)).tint(.blue)
-            
-            //Marker("サンロード", coordinate: CLLocationCoordinate2D(latitude: 35.7037671, longitude: 139.5974778)).tint(.blue)
-            
+            Marker("ハモニカ横丁入口", coordinate: CLLocationCoordinate2D(latitude:35.70347, longitude: 139.57910)).tint(.orange)
         }
     }
 }
