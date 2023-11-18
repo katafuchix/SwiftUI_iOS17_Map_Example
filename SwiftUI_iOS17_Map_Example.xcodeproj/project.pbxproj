@@ -17,6 +17,7 @@
 		312CD25A2A46CF2F0088BD01 /* MapLocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312CD2592A46CF2F0088BD01 /* MapLocationSearchView.swift */; };
 		312CD25D2A46CF730088BD01 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312CD25C2A46CF730088BD01 /* enums.swift */; };
 		316228B82A47F55200C81CF1 /* MapRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316228B72A47F55200C81CF1 /* MapRouteView.swift */; };
+		31C755982B085C590029A9D8 /* SimpeMapTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C755972B085C590029A9D8 /* SimpeMapTypeView.swift */; };
 		31F4D0452A47229C00851F88 /* MapLookAroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4D0442A47229C00851F88 /* MapLookAroundView.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		312CD2592A46CF2F0088BD01 /* MapLocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationSearchView.swift; sourceTree = "<group>"; };
 		312CD25C2A46CF730088BD01 /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 		316228B72A47F55200C81CF1 /* MapRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouteView.swift; sourceTree = "<group>"; };
+		31C755972B085C590029A9D8 /* SimpeMapTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpeMapTypeView.swift; sourceTree = "<group>"; };
 		31F4D0442A47229C00851F88 /* MapLookAroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLookAroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				312CD2522A46AA1B0088BD01 /* SimpeMapView.swift */,
+				31C755972B085C590029A9D8 /* SimpeMapTypeView.swift */,
 				312CD2572A46B3C00088BD01 /* MapTypeView.swift */,
 				312CD2592A46CF2F0088BD01 /* MapLocationSearchView.swift */,
 				31F4D0442A47229C00851F88 /* MapLookAroundView.swift */,
@@ -188,6 +191,7 @@
 				312CD2442A46A9F10088BD01 /* SwiftUI_iOS17_Map_ExampleApp.swift in Sources */,
 				316228B82A47F55200C81CF1 /* MapRouteView.swift in Sources */,
 				312CD2582A46B3C00088BD01 /* MapTypeView.swift in Sources */,
+				31C755982B085C590029A9D8 /* SimpeMapTypeView.swift in Sources */,
 				312CD2562A46B2B60088BD01 /* CLLocationCoordinate2D+Extended.swift in Sources */,
 				312CD25A2A46CF2F0088BD01 /* MapLocationSearchView.swift in Sources */,
 				312CD2532A46AA1B0088BD01 /* SimpeMapView.swift in Sources */,

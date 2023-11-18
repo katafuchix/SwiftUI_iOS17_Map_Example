@@ -15,6 +15,8 @@ struct ContentView: View {
                     
                     NavigationLink("Simple", destination: SimpeMapView())
                     
+                    NavigationLink("Simple MapType", destination: SimpeMapTypeView())
+                    
                     NavigationLink("Map Type", destination: MapTypeView())
                     
                     NavigationLink("Map Location Search", destination: MapLocationSearchView())
