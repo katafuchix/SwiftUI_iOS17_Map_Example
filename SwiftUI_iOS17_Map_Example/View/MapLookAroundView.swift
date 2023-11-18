@@ -40,7 +40,6 @@ struct MapLookAroundView: View {
             MapUserLocationButton()
             MapCompass()
             MapScaleView()
-            //MapPitchButton()
             MapPitchToggle()
         }
         .mapStyle(.standard(elevation: .automatic, emphasis: .automatic))

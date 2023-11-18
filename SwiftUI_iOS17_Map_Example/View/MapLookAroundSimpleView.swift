@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct MapLookAroundSimpleView: View {
-    
+    /*
     var bounds: MapCameraBounds {
         get {
              let coordinates = CLLocationCoordinate2D(latitude: 35.7031528, longitude: 139.57985031)
@@ -25,14 +25,32 @@ struct MapLookAroundSimpleView: View {
             return MKCoordinateRegion(center: coordinates, latitudinalMeters: 1000, longitudinalMeters: 1000)
         }
     }
+    */
+    
+    var coordinate: CLLocationCoordinate2D {
+        get {
+            return CLLocationCoordinate2D(latitude: 35.7031528, longitude: 139.57985031)
+        }
+    }
+    var region: MKCoordinateRegion {
+        get {
+            return MKCoordinateRegion(center: coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        }
+    }
+    var bounds: MapCameraBounds {
+        get {
+            return MapCameraBounds(centerCoordinateBounds: region, minimumDistance: 1000, maximumDistance: 10000)
+        }
+    }
+    
+    
     
     @State private var mapSelection: MapFeature?
     @State private var lookAroundScene: MKLookAroundScene? = nil
     
     var body: some View {
 
-        
-        Map(bounds: MapCameraBounds(centerCoordinateBounds: region, minimumDistance: 1000, maximumDistance: 1000),
+        Map(bounds: bounds,
             interactionModes: .all, selection: $mapSelection).safeAreaInset(edge: .bottom) {
             
             if lookAroundScene != nil {
@@ -40,11 +58,11 @@ struct MapLookAroundSimpleView: View {
                   LookAroundPreview(initialScene: lookAroundScene)
                      .frame(height: 200)
                      .padding()
-                  Button("Hide Street") {
+                  Button("Close") {
                       lookAroundScene = nil
                   }.buttonStyle(.borderedProminent)
                }
-            } else {
+            } /*else {
                Button("Show Street") {
                   //if let region = appData.cameraPos.region {
                      Task {
@@ -55,7 +73,7 @@ struct MapLookAroundSimpleView: View {
                      }
                   //}
                }.buttonStyle(.borderedProminent)
-            }
+            }*/
             
         }.mapFeatureSelectionContent(content: { item in // タップ時の処理
             //print(item)
@@ -76,10 +94,18 @@ struct MapLookAroundSimpleView: View {
                             }*/
                             Task {
                                let request = MKLookAroundSceneRequest(coordinate: item.coordinate)
-                               if let scene = try? await request.scene {
+                                /*if let scene = try? await request.scene {
                                    print(scene)
                                    lookAroundScene = scene
-                               }
+                               }*/
+                                
+                                do {
+                                    let scene = try await request.scene
+                                    lookAroundScene = scene
+                                } catch {
+                                    print("Error: \(error)")
+                                }
+                                
                             }
                         }
                 }

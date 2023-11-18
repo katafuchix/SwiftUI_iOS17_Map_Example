@@ -30,6 +30,8 @@ struct MapCameraPositionView: View {
     
     @State private var cameraProsition: MapCameraPosition = .camera(MapCamera(centerCoordinate: CLLocationCoordinate2D(latitude: 35.681236, longitude: 139.767125), distance: 3729, heading: 92, pitch: 70))
     
+    
+
     var body: some View {
         Map(position: $cameraProsition, bounds: bounds,
             interactionModes: .all)

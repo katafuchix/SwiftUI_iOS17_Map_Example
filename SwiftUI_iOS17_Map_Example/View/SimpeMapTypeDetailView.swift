@@ -22,7 +22,7 @@ struct SimpeMapTypeDetailView: View {
     var body: some View {
         Map(bounds: bounds,
             interactionModes: .all)
-        .mapStyle(.standard(pointsOfInterest: .including([.cafe])))
+        .mapStyle(.standard(elevation: .realistic, pointsOfInterest: .including([.cafe]), showsTraffic: false))
 
     }
 }

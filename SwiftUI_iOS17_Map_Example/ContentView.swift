@@ -33,6 +33,8 @@ struct ContentView: View {
                     
                     NavigationLink("Map Add Annotation", destination: MapAddAnnotationView())
                     
+                    NavigationLink("Map Feature Selection", destination: MapFeatureSelectionView())
+                    
                     NavigationLink("Map Overlay", destination: MapOverlayView())
                     
                     NavigationLink("Map Search Request", destination: MapSearchRequestView())
