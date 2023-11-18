@@ -17,6 +17,12 @@ struct ContentView: View {
                     
                     NavigationLink("Simple MapType", destination: SimpeMapTypeView())
                     
+                    NavigationLink("Simple MapType Detail", destination: SimpeMapTypeDetailView())
+                    
+                    NavigationLink("Map Objects", destination: MapObjectsView())
+                    
+                    NavigationLink("Map Controls", destination: MapControlsView())
+                    
                     NavigationLink("MapCameraBounds", destination: MapCameraBoundsView())
                     
                     NavigationLink("MapCameraPosition", destination: MapCameraPositionView())
