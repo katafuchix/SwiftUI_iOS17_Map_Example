@@ -8,6 +8,12 @@
 import SwiftUI
 import MapKit
 
+extension CLLocationCoordinate2D {
+  static let kichijojiSt = CLLocationCoordinate2D(latitude: 35.7031528, longitude: 139.57985031)
+  static let sunload = CLLocationCoordinate2D(latitude: 35.703653, longitude: 139.57980)
+  static let hamonika = CLLocationCoordinate2D(latitude: 35.70347, longitude: 139.57910)
+}
+
 struct MapAddAnnotationView: View {
     
     var bounds: MapCameraBounds {
@@ -21,13 +27,19 @@ struct MapAddAnnotationView: View {
     var body: some View {
         Map(bounds: bounds,
             interactionModes: .all) {
+            Annotation("",
+              coordinate: CLLocationCoordinate2D(latitude: 35.700833, longitude: 139.574167), anchor: .bottom) {
+                VStack {
+                    Text("入口はここ！")
+                    Image(systemName: "arrowshape.right")
+                }
+                .foregroundColor(.blue)
+                .padding()
+                .background(in: .capsule)
+            }
             
-            Marker("JR吉祥寺駅", coordinate: CLLocationCoordinate2D(latitude: 35.7031528, longitude: 139.57985031))
             
-            Marker("サンロード商店街入口", coordinate: CLLocationCoordinate2D(latitude: 35.703653, longitude: 139.57980)).tint(.blue)
-            
-            
-            Marker("ハモニカ横丁入口", coordinate: CLLocationCoordinate2D(latitude:35.70347, longitude: 139.57910)).tint(.orange)
+            //Marker("井の頭公園入口", coordinate: CLLocationCoordinate2D(latitude: 35.700833, longitude: 139.574167))
         }
     }
 }

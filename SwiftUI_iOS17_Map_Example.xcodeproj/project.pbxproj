@@ -22,6 +22,7 @@
 		31C7559C2B0866F80029A9D8 /* MapTypeExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C7559B2B0866F80029A9D8 /* MapTypeExampleView.swift */; };
 		31C7559E2B08683C0029A9D8 /* MapCameraPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C7559D2B08683C0029A9D8 /* MapCameraPositionView.swift */; };
 		31C755A02B08697E0029A9D8 /* MapAddAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C7559F2B08697E0029A9D8 /* MapAddAnnotationView.swift */; };
+		31C755A22B087B150029A9D8 /* MapMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C755A12B087B150029A9D8 /* MapMarkerView.swift */; };
 		31F4D0452A47229C00851F88 /* MapLookAroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4D0442A47229C00851F88 /* MapLookAroundView.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		31C7559B2B0866F80029A9D8 /* MapTypeExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTypeExampleView.swift; sourceTree = "<group>"; };
 		31C7559D2B08683C0029A9D8 /* MapCameraPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCameraPositionView.swift; sourceTree = "<group>"; };
 		31C7559F2B08697E0029A9D8 /* MapAddAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAddAnnotationView.swift; sourceTree = "<group>"; };
+		31C755A12B087B150029A9D8 /* MapMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarkerView.swift; sourceTree = "<group>"; };
 		31F4D0442A47229C00851F88 /* MapLookAroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLookAroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				31C7559D2B08683C0029A9D8 /* MapCameraPositionView.swift */,
 				31C7559B2B0866F80029A9D8 /* MapTypeExampleView.swift */,
 				312CD2572A46B3C00088BD01 /* MapTypeView.swift */,
+				31C755A12B087B150029A9D8 /* MapMarkerView.swift */,
 				31C7559F2B08697E0029A9D8 /* MapAddAnnotationView.swift */,
 				312CD2592A46CF2F0088BD01 /* MapLocationSearchView.swift */,
 				31F4D0442A47229C00851F88 /* MapLookAroundView.swift */,
@@ -211,6 +214,7 @@
 				312CD2532A46AA1B0088BD01 /* SimpeMapView.swift in Sources */,
 				31C7559C2B0866F80029A9D8 /* MapTypeExampleView.swift in Sources */,
 				31C7559A2B085EC90029A9D8 /* MapCameraBoundsView.swift in Sources */,
+				31C755A22B087B150029A9D8 /* MapMarkerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
