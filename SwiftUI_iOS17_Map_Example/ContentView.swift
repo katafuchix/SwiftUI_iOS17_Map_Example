@@ -29,7 +29,7 @@ struct ContentView: View {
                     
                     NavigationLink("Map Overlay", destination: MapOverlayView())
                     
-                    NavigationLink("Map Polyline", destination: MapPolylineView())
+                    NavigationLink("Map Search Request", destination: MapSearchRequestView())
                     
                     NavigationLink("Map Location Search", destination: MapLocationSearchView())
                     
